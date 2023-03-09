@@ -16,7 +16,6 @@ router.route("/").get(getAllThoughts).post(createNewThought);
 
 // find thoughts by id activity 23 is what I am goin off
 router.route("/:id").get(getThoughtsById).put(updateThought).delete(deleteThought);
-
 router.route("/:thoughtId/reactions").post(addReaction);
 router.route("/:thoughtId/reactions/:reactionId").delete(deleteReaction);
 
