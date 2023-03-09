@@ -30,6 +30,7 @@ const thoughtSchema = new Schema(
       }
 
 );
+
 const Thoughts = model("Thought", thoughtSchema);
 
 module.exports = Thoughts
