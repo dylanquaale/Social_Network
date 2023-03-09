@@ -6,11 +6,10 @@ connection.once("open", async () => {
   await Thoughts.deleteMany({});
   await User.deleteMany({});
 
-
   let users = [
     {
       username: "Paul",
-      email: "paul@gmail.comd",
+      email: "paul@gmail.com",
     },
   ];
 
@@ -18,14 +17,12 @@ connection.once("open", async () => {
     {
       username: "Paul",
       thoughtText: "Hello world",
-      reaction: "my first reaction"
+      reaction: "my first reaction",
     },
   ];
 
-
   await User.collection.insertMany(users);
   await Thoughts.collection.insertMany(thoughts);
-
 
   console.log("seed is planted 🌱");
   process.exit(0);
