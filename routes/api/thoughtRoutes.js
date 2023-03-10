@@ -3,8 +3,8 @@ const router = require("express").Router();
 // all of the requirements
 const {
   getAllThoughts,
-  //   createNewThought,
-  //   getThoughtsById,
+    createNewThought,
+    getThoughtsById,
   //   updateThought,
   //   deleteThought,
   //   addReaction,
@@ -12,11 +12,11 @@ const {
 } = require("../../controllers/thoughtControllers");
 
 // get/create thoughts
-router.route("/").get(getAllThoughts);
-// .post(createNewThought);
-
+router.route("/").get(getAllThoughts).post(createNewThought);
+router.route("/:id").get(getThoughtsById);
 // find thoughts by id activity 23 is what I am goin off
-// router.route("/:id").get(getThoughtsById).put(updateThought).delete(deleteThought);
+
+// .put(updateThought).delete(deleteThought);
 // router.route("/:thoughtId/reactions").post(addReaction);
 // router.route("/:thoughtId/reactions/:reactionId").delete(deleteReaction);
 
