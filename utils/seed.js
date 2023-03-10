@@ -11,11 +11,20 @@ connection.once("open", async () => {
       username: "Paul",
       email: "paul@gmail.com",
     },
+    {
+      username: "Greg",
+      email: "greg@gmail.com",
+    },
   ];
 
   let thoughts = [
     {
       username: "Paul",
+      thoughtText: "Hello world",
+      reaction: "my first reaction",
+    },
+    {
+      username: "Greg",
       thoughtText: "Hello world",
       reaction: "my first reaction",
     },

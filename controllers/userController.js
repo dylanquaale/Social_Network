@@ -45,10 +45,10 @@ module.exports = {
           ? res.status(404).json({ message: "No user with that ID" })
           : Thoughts.deleteMany({ _id: { $in: user.thoughts } })
       )
-      .then(() => res.json({ message: "User and associated apps deleted!" }))
+      .then(() => res.json({ message: "User deleted!" }))
       .catch((err) => res.status(500).json(err));
   },
-
+  // add friend
   addFriend(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId },
@@ -62,7 +62,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-
+  // removes friend
   removeFriend(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId },
@@ -71,7 +71,7 @@ module.exports = {
     )
       .then((friend) =>
         !friend
-          ? res.status(404).json({ message: 'No application with this id!' })
+          ? res.status(404).json({ message: 'No friend with this id!' })
           : res.json(friend)
       )
       .catch((err) => res.status(500).json(err));
