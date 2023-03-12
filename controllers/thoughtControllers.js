@@ -50,15 +50,16 @@ module.exports = {
   },
   addReaction(req, res) {
     Thought.findOneAndUpdate(
-      { _id: req.params.id },
-      { $addToSet: { reaction: req.params.id } },
+      { _id: req.params.thoughtId },
+      { $addToSet: { reaction: req.body } },
       { runValidators: true, new: true }
     )
       .then((reaction) =>
         !reaction
-          ? res.status(404).json({ message: "No friend with this id!" })
+          ? res.status(404).json({ message: "No thought with this id!" })
           : res.json(reaction)
       )
       .catch((err) => res.status(500).json(err));
   },
+
 };
