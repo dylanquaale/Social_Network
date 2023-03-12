@@ -1,5 +1,7 @@
 const Thought = require("../models/Thought");
 
+// const { User, Thought } = require("../models");
+
 module.exports = {
   getAllThoughts(req, res) {
     Thought.find()
@@ -19,7 +21,7 @@ module.exports = {
   },
   createNewThought(req, res) {
     Thought.create(req.body)
-      .then((dbThoughtData) => res.json(dbThoughtData))
+      .then((user) => res.json(user))
       .catch((err) => res.status(500).json(err));
   },
   updateThought(req, res) {
