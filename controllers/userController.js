@@ -1,3 +1,4 @@
+// const Thought = require("../models/Thought");
 const User = require("../models/User");
 
 // const { User } = require('../models');
@@ -6,6 +7,9 @@ const User = require("../models/User");
 module.exports = {
   getAllUsers(req, res) {
     User.find()
+      .populate({
+        path: 'thoughts',
+      })
       .then((users) => res.json(users))
       .catch((err) => res.status(500).json(err));
   },
