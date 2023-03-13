@@ -6,7 +6,7 @@ module.exports = {
       .then((thoughts) => res.json(thoughts))
       .catch((err) => res.status(500).json(err));
   },
-
+// get your thoughts by the id 
   getThoughtsById(req, res) {
     Thought.findOne({ _id: req.params.id })
       .select("-__v")
@@ -17,7 +17,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-
+// user is able to create a new thought with the id 
   createNewThought(req, res) {
     Thought.create(req.body)
       .then((thought) => {
@@ -39,7 +39,7 @@ module.exports = {
         res.status(500).json(err);
       });
   },
-
+//  user is able to update thought
   updateThought(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.id },
@@ -53,6 +53,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
+  // user is able to delete thoughts
   deleteThought(req, res) {
     Thought.findOneAndRemove(
       { _id: req.params.id },
@@ -66,6 +67,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
+  // user can add reactions
   addReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.id },
@@ -79,6 +81,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
+  // user can delete reactions
   deleteReaction(req, res) {
     Thought.findOneAndRemove(
       { _id: req.params.id },

@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 
+// the users username/email/thoughts/friends 
 const userSchema = new Schema(
   {
     username: {
