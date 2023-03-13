@@ -13,10 +13,15 @@
 
 ### Installation
 Npm I
+
 express
+
 mongo
+
 etc
+
 ask me for more if you dont know
+
 ### Usage
 users are able to create themselves and leaves thoughts and reactions to one another post you could say
 ### Credits
