@@ -1,5 +1,3 @@
-// const Thought = require("../models/Thought");
-
 const { User, Thought } = require("../models");
 
 module.exports = {
@@ -68,17 +66,39 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
+  // addReaction(req, res) {
+  //   Thought.findOneAndUpdate(
+  //     { _id: req.params.id },
+  //     { $addToSet: { reaction: req.body } },
+  //     { runValidators: true, new: true }
+  //   )
+  //     .then((reaction) =>
+  //       !reaction
+  //         ? res.status(404).json({ message: "No thought with this id!" })
+  //         : res.json(reaction)
+  //     )
+  //     .catch((err) => res.status(500).json(err));
+  // },
+
   addReaction(req, res) {
-    Thought.findOneAndUpdate(
-      { _id: req.params.thoughtId },
-      { $addToSet: { reaction: req.body } },
-      { runValidators: true, new: true }
-    )
-      .then((reaction) =>
-        !reaction
-          ? res.status(404).json({ message: "No thought with this id!" })
-          : res.json(reaction)
+    Thought.create(req.body)
+      .then((reaction) => {
+        return User.findOneAndUpdate(
+          { _id: req.body.userId },
+          { $addToSet: { reaction: reaction._id } },
+          { new: true }
+        );
+      })
+      .then((user) =>
+        !user
+          ? res.status(404).json({
+              message: "reaction created, but found no user with that ID",
+            })
+          : res.json("Reaction Created 🎉")
       )
-      .catch((err) => res.status(500).json(err));
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
   },
 };
