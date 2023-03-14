@@ -33,8 +33,11 @@ users can create thoughts and add reactions to one another.
 API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. You’ll use Express.js for routing, a MongoDB database, and the Mongoose ODM. In addition to using the Express.js and Mongoose packages, you may also optionally use a JavaScript date library of your choice or the native JavaScript Date object to format timestamps.
 ### Contribution
 Dennis Itua,
+
 ASK BCS,
+
 MANY CLASS ACTIVITIES did a very good job walking you through it with just puzzle pieces to put together.
+
 ### Questions
 Questions are directed to my email  
 
