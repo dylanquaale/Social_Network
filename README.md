@@ -29,7 +29,8 @@ users are able to create themselves and leaves thoughts and reactions to one ano
 ### Credits
 credits are to my tutor Dennis Itua he helped me create the date method with the getter i was confused about the rest was done by me. asked bcs for some help on small things along the way but was very close on most questions that I had
 ### Description
-users can create thoughts and add reactions to one another 
+users can create thoughts and add reactions to one another.
+API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. You’ll use Express.js for routing, a MongoDB database, and the Mongoose ODM. In addition to using the Express.js and Mongoose packages, you may also optionally use a JavaScript date library of your choice or the native JavaScript Date object to format timestamps.
 ### Contribution
 Dennis Itua,
 ASK BCS,
