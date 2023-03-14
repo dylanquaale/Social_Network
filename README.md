@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-https://drive.google.com/file/d/1KbtXOlrtXXfZ5oydVgt3IZCGPb0MKqN3/viewLinks to an external site.
+https://drive.google.com/file/d/1KbtXOlrtXXfZ5oydVgt3IZCGPb0MKqN3/viewLinks
 
 - [Installation](#installation)
 - [Usage](#usage)
